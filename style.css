@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cedarville Cursive', cursive;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Tilt Neon', cursive;
+    font-family: 'Unbounded', cursive;
+}
+
+body{
+    overflow: hidden;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(-45deg, #0984e3, #00b894);
+    padding: 50px;
+}
+
+.container .to-do-app {
+    background-color: rgba(255, 255, 255, .9);
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.container .to-do-app h1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+}
+
+.container .to-do-app h1 img {
+    width: 50px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+    background-color: #c7ecee;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+
+.input-box input {
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+.input-box button {
+    position: absolute;
+    right: 0;
+    width: 50px;
+    padding: 9px;
+    border-radius: 10px;
+    border: none;
+    background-color: #7ed6df;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.input-box button:hover {
+    background-color: #22a6b3;
+}
+
+.list-container {
+    list-style: none;
+    position: relative;
+}
+
+.list-container li {
+    position: relative;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px 14px 10px 20px;
+    word-break: break-all;
+}
+
+.list-container li::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background-image: url("./media/unchecked.png");
+    background-size: cover;
+    background-position: center;
+    left: -2px;
+}
+
+.list-container li span {
+    position: absolute;
+    right: 15px;
+    top: -1px;
+    line-height: 35px;
+    width: 35px;
+    height: 35px;
+    font-size: medium;
+    text-align: center;
+    background-color: #7ed6df;
+    line-height: 35px;
+    border-radius: 50%;
+}
+
+.list-container li span:hover {
+    background-color: #22a6b3;
+}
+
+.cheacked {
+    text-decoration: line-through;
+}
+
+.list-container li.cheacked::before {
+    background-image: url("./media/checked.png");
+}
+
+@media (max-width: 768px) {
+    .container .to-do-app {
+        width: 300px;
+    }
+
+    .container .to-do-app h1 {
+        font-size: 15px;
+    }
+}
